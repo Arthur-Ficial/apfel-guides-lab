@@ -1,0 +1,1 @@
+The current temperature in Vienna is 15°C.

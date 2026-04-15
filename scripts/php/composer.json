@@ -1,0 +1,11 @@
+{
+  "name": "apfel/php-scripts",
+  "description": "apfel language guide scripts - PHP",
+  "require": {
+    "openai-php/client": "^0.10.0",
+    "guzzlehttp/guzzle": "^7.10"
+  },
+  "config": {
+    "allow-plugins": {}
+  }
+}

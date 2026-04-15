@@ -41,6 +41,28 @@ def run_script(
     )
 
 
+def run_script_retrying(
+    argv: Sequence[str],
+    cwd: Path | None = None,
+    stdin: str | None = None,
+    timeout: int = 120,
+    attempts: int = 2,
+    predicate=None,
+) -> subprocess.CompletedProcess:
+    """Run a script up to `attempts` times; accepts first result where the
+    optional `predicate(result)` is True (default: exit 0 + non-empty stdout)."""
+    if predicate is None:
+        def predicate(r: subprocess.CompletedProcess) -> bool:
+            return r.returncode == 0 and len(r.stdout.strip()) >= 5
+    last = None
+    for _ in range(max(1, attempts)):
+        last = run_script(argv, cwd=cwd, stdin=stdin, timeout=timeout)
+        if predicate(last):
+            return last
+    assert last is not None
+    return last
+
+
 def assert_model_output_ok(result: subprocess.CompletedProcess, min_chars: int = 5):
     assert result.returncode == 0, (
         f"script failed (exit {result.returncode})\n"
