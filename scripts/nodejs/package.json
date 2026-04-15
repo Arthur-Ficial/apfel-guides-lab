@@ -1,0 +1,9 @@
+{
+  "name": "apfel-nodejs-scripts",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "openai": "^4.80.0"
+  }
+}
