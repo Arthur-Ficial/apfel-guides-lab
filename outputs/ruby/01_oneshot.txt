@@ -1,0 +1,1 @@
+Swift is a modern, high-performance, and versatile programming language designed for developing iOS, macOS, watchOS, and tvOS applications.
