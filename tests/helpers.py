@@ -38,6 +38,8 @@ def run_script(
         text=True,
         timeout=timeout,
         env=env,
+        encoding="utf-8",
+        errors="replace",
     )
 
 

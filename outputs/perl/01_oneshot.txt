@@ -1,0 +1,1 @@
+Swift is a modern, safe, and efficient programming language developed by Apple for building user interfaces, server-side applications, and command-line tools.
