@@ -1,0 +1,13 @@
+{
+  "chip": "Apple M1",
+  "year": 2020,
+  "cores": {
+    "CPU": {
+      "Cores": 8,
+      "Threads": 8
+    },
+    "GPU": {
+      "Cores": 16
+    }
+  }
+}
