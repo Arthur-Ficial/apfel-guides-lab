@@ -1,0 +1,1 @@
+Got expected error: HTTP 501 - Embeddings not supported by Apple's on-device model.

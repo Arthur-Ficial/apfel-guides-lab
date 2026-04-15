@@ -1,0 +1,1 @@
+Swift is a modern, open-source programming language known for its safety features, ease of use, and performance, primarily used for developing iOS, macOS, watchOS, and tvOS applications.

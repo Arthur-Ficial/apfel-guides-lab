@@ -1,0 +1,14 @@
+{
+  "chip" : "Apple M1",
+  "cores" : {
+    "CPU" : {
+      "count" : 8,
+      "type" : "High-performance"
+    },
+    "GPU" : {
+      "count" : 8,
+      "type" : "High-efficiency"
+    }
+  },
+  "year" : 2020
+}

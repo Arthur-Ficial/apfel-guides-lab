@@ -1,0 +1,1 @@
+Apple released their first ARM-based system-on-a-chip for Mac computers in November 2020. It has an 8-core CPU with four performance cores and four efficiency cores, plus an integrated GPU with up to 8 cores. It unified CPU, GPU, memory, and neural engine on a single die, delivering significant performance-per-watt improvements over the Intel chips it replaced.
