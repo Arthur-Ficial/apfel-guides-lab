@@ -3,9 +3,11 @@ import json
 
 from tests.helpers import (
     REPO_ROOT,
+    WEATHER_KEYWORDS,
     assert_model_output_ok,
     capture_output,
     run_script,
+    run_until_weather_answer,
     script_path,
 )
 
@@ -50,9 +52,9 @@ def test_errors(capture_mode):
 
 
 def test_tools(capture_mode):
-    r = _run("05_tools.py")
+    r = run_until_weather_answer([*UV_RUN, str(script_path("python", "05_tools.py"))])
     assert_model_output_ok(r)
-    assert any(w in r.stdout.lower() for w in ("vienna", "temperature", "celsius", "°c", "14"))
+    assert any(w in r.stdout.lower() for w in WEATHER_KEYWORDS), r.stdout
     if capture_mode:
         capture_output("python", "05_tools.py", r.stdout)
 

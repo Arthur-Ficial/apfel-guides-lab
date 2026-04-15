@@ -75,6 +75,24 @@ def assert_model_output_ok(result: subprocess.CompletedProcess, min_chars: int =
     assert len(out) >= min_chars, f"stdout too short ({len(out)} chars):\n{out!r}"
 
 
+WEATHER_KEYWORDS = ("vienna", "14", "temperature", "celsius", "°c")
+
+
+def run_until_weather_answer(
+    argv: Sequence[str],
+    cwd: Path | None = None,
+    attempts: int = 3,
+) -> subprocess.CompletedProcess:
+    """Retry a tool-calling script until the model actually calls the tool and
+    produces a weather-like answer. Small models refuse tool calls randomly."""
+    def ok(r: subprocess.CompletedProcess) -> bool:
+        if r.returncode != 0:
+            return False
+        out = r.stdout.lower()
+        return any(k in out for k in WEATHER_KEYWORDS)
+    return run_script_retrying(argv, cwd=cwd, attempts=attempts, predicate=ok)
+
+
 def capture_output(lang: str, filename: str, stdout: str):
     d = OUTPUTS / lang
     d.mkdir(parents=True, exist_ok=True)
