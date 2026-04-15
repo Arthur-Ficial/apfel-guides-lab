@@ -1,0 +1,5 @@
+{
+  "chip": "Apple M1",
+  "year": 2020,
+  "cores": 8
+}
