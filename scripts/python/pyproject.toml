@@ -1,0 +1,8 @@
+[project]
+name = "apfel-python-scripts"
+version = "0.1.0"
+description = "apfel language guide scripts - Python"
+requires-python = ">=3.11"
+dependencies = [
+    "openai>=1.50.0",
+]

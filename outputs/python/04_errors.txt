@@ -1,0 +1,1 @@
+Got expected error: HTTP 501 - Error code: 501 - {'error': {'message': "Embeddings not supported by Apple's on-device model.", 'type': 'invalid_request_error'}}
