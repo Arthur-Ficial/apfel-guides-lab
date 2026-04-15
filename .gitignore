@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+node_modules/
+vendor/
+.phpunit.cache/
+Gemfile.lock.bak
+*.tmp
+.DS_Store
+/outputs/*.tmp

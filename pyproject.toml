@@ -1,0 +1,14 @@
+[project]
+name = "apfel-guides-lab"
+version = "0.1.0"
+description = "Runnable proof for apfel language guides"
+requires-python = ">=3.11"
+dependencies = [
+    "pytest>=8.0",
+    "requests>=2.31",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-ra --tb=short"
